@@ -1,0 +1,41 @@
+---
+title: "new project ecs data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+install.packages('xlsx', repos='http://cran.us.r-project.org')
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+library("xlsx")
+rep =read.xlsx("Walk-in Report.xlsx", sheetIndex = 2,header = TRUE,colIndex = c(13,10),
+startRow = 1,endRow = 32)
+rep
+
+#(dtab<-table(rep))
+#barplot(table(rep))
+#barplot(dtab, ylim=c(0,30), xlab="r" ,ylab="z",col="red",main= "Test Report")
+#beer.counts = table(rep)
+#pie(beer.counts) = x
+beer.counts = table (rep)
+#pie(beer.counts)
+pie(beer.counts)
+#names(beer.counts) = c("Aravind DB","Direct walkin",
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
